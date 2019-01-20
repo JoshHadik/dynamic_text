@@ -1,4 +1,4 @@
-module EditableText
+module DynamicText
   module ViewHelper
     def dynamic_text(text="", tag: "default", filler: "N/A")
       text = filler if !text || text.empty?
@@ -42,7 +42,7 @@ module EditableText
     def editable_attributes(resource, attribute, options={})
       dynamic_attributes(resource, attribute, options={}).tap do |hash|
         hash[:url] =
-          options[:url] || send("#{EditableText.configuration.path_prefix}#{hash[:resource_type]}_path", resource)
+          options[:url] || send("#{DynamicText.configuration.path_prefix}#{hash[:resource_type]}_path", resource)
         hash[:ajax_key] =
           options[:ajax_key] || default_ajax_key(hash[:resource_type], attribute)
       end
