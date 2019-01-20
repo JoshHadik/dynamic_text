@@ -1,0 +1,22 @@
+.dynamic-text-container {
+  display: inline-block;
+}
+
+.dynamic-text {
+  cursor: url('/assets/dynamic_text/pencil.png'), pointer;
+  display: block;
+  white-space: pre-line;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1px;
+}
+
+.dynamic-text:focus {
+  cursor: text;
+}
+
+.dynamic-text[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #878787;
+  font-style: italic;
+}
