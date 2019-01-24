@@ -1,11 +1,11 @@
 class DynamicText::Configuration
-  attr_reader :path_prefix
+  attr_reader :resource_scope
 
   def initialize
-    @path_prefix = nil
+    @resource_scope = nil
   end
 
-  def path_prefix=(prefix)
-    @path_prefix = "#{prefix}_"
+  def resource_scope=(resource_scope)
+    @resource_scope = "/#{resource_scope}"
   end
 end
