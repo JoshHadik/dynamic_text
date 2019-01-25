@@ -1,0 +1,20 @@
+<span class='editable-text-container'>
+  <%= content_tag(:span,
+        class: 'editable-text',
+        contenteditable: true,
+        placeholder: placeholder,
+        data: { 'dynamic-tag': dynamic_tag }
+      ) do -%>
+    <%= value -%>
+  <% end %>
+
+  <input id='_action'
+         type='hidden'
+         name='_action'
+         value='patch'
+         url='<%= url %>'
+         attribute='<%= attribute %>'
+         resource-type='<%= resource_type %>'
+         js-key='<%= js_key %>'
+  >
+</span>

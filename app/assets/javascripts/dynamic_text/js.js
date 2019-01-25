@@ -13,3 +13,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+const events = ["turbolinks:load", "page:change"];
+
+events.forEach((evt) => {
+  document.addEventListener(evt, prepareDynamicText)
+});
