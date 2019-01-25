@@ -106,9 +106,9 @@ RSpec.describe DynamicText::LocalsSetter do
       expect(output[:url]).to eq("/resources/#{resource.id}")
     end
 
-    it 'returns a hash with :ajax_key defaulted to format resource_type:attribute' do
+    it 'returns a hash with :js_key defaulted to format resource_type:attribute' do
       output = subject.get_editable_locals(resource, :attribute)
-      expect(output[:ajax_key]).to eq("resource:attribute")
+      expect(output[:js_key]).to eq("resource:attribute")
     end
   end
 end

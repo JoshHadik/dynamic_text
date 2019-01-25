@@ -54,13 +54,13 @@ const DynamicText = {
     this.ajaxResponses['default'] = func;
   },
 
-  // Set response for specific ajax key
-  handleAjaxResponseFor(ajaxKey, func) {
-    this.ajaxResponses[ajaxKey] = func;
+  // Set response for specific js key
+  handleAjaxResponseFor(jsKey, func) {
+    this.ajaxResponses[jsKey] = func;
   },
 
   // Build ajax request for patch resource function.
-  sendPatchRequest(url, resourceType, attribute, updatedValue, ajaxKey) {
+  sendPatchRequest(url, resourceType, attribute, updatedValue, jsKey) {
     const CSRF_TOKEN =
       document.querySelector('meta[name="csrf-token"]')
               .getAttribute('content');
@@ -78,7 +78,7 @@ const DynamicText = {
     xhr.onload = () => {
       if (xhr.status === 200) {
         successCallback =
-          this.ajaxResponses[ajaxKey] || this.ajaxResponses['default']
+          this.ajaxResponses[jsKey] || this.ajaxResponses['default']
         successCallback(JSON.parse(xhr.responseText), resourceType)
       }
     };
@@ -98,9 +98,9 @@ const DynamicText = {
     const url = action.getAttribute('url');
     const resourceType = action.getAttribute('resource-type');
     const attribute = action.getAttribute('attribute');
-    const ajaxKey = action.getAttribute('ajax-key');
+    const jsKey = action.getAttribute('js-key');
     const updatedValue = editableText.innerText;
 
-    this.sendPatchRequest(url, resourceType, attribute, updatedValue, ajaxKey)
+    this.sendPatchRequest(url, resourceType, attribute, updatedValue, jsKey)
   }
 }
