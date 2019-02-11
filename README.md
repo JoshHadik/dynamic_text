@@ -25,15 +25,15 @@ $ gem install dynamic_text
 
 Dynamic Text allows you to do two main things:
 
-### 1 - Render Editable Content Based on a Resource and Attribute
+### 1) Render Editable Content Based on a Resource and Attribute
 
 With the dynamic_text gem, you can easily create a hybrid HTML element that acts as both the display text for a specific attribute of a resource, and the text box for updating that attribute.
 
-```ruby
+```html
 <%= editable_text_for(@article, :title) %>
 ```
 
-### 2 - Render Dynamic Content that Updates In Real Time with Editable Content
+### 2) Render Dynamic Content that Updates In Real Time with Editable Content
 
 You might not want all of the text for a specific attribute of a specific resource to be editable. For example, you might want to display the title for a blog post in both an 'h1' tag above the body of the post, as well as the navigation bar on the top of the screen.
 
@@ -41,7 +41,7 @@ In this case, you might want the text to be editable when pressed on in the main
 
 You can use the following method to identify content that isn't editable but updates in real time when changes are made to the attribute of the resource somewhere else on the page.
 
-```ruby
+```html
 <%= dynamic_text_for(@article, :title) %>
 ```
 
