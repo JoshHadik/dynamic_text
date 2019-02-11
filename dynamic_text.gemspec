@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version     = DynamicText::VERSION
   spec.authors     = ["Josh Hadik"]
   spec.email       = ["josh.hadik@gmail.com"]
-  # spec.homepage    = ""
+  spec.homepage    = "https://github.com/JoshHadik/dynamic_text"
   spec.summary     = "A light-weight gem for adding content editable text to a rails project."
   spec.description = "dynamic_text allows you to easily integrate content-editable HTML divs for a specific attribute of a specific resource."
   spec.license     = "MIT"

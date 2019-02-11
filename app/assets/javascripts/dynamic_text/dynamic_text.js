@@ -90,8 +90,8 @@ const DynamicText = {
   },
 
   // Update a specific attribute of a resource.
-  patchResource(e) {
-    const editableText = e.currentTarget;
+  patchResource(target) {
+    const editableText = target;
     const editableTextContainer = editableText.parentNode;
     const action = editableTextContainer.querySelector("[name='_action']");
 
