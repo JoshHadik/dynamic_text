@@ -29,25 +29,20 @@ Dynamic Text allows you to do two main things:
 
 With the dynamic_text gem, you can easily create a hybrid HTML element that acts as both the display text for a specific attribute of a resource, and the text box for updating that attribute.
 
-```html
-<div>
-  <%= editable_text_for(@article, :title) %>
-</div>
+```ruby
+<%= editable_text_for(@article, :title) %>
 ```
 
 ### 2 - Render Dynamic Content that Updates In Real Time with Editable Content
 
 You might not want all of the text for a specific attribute of a specific resource to be editable. For example, you might want to display the title for a blog post in both an 'h1' tag above the body of the post, as well as the navigation bar on the top of the screen.
 
-
 In this case, you might want the text to be editable when pressed on in the main article section of the page, but not in the header. However, you probably still want the text in the header to change in real time if a user edits the title from within the article section.
 
 You can use the following method to identify content that isn't editable but updates in real time when changes are made to the attribute of the resource somewhere else on the page.
 
-```html
-<div>
-  <%= dynamic_text_for(@article, :title) %>
-</div>
+```ruby
+<%= dynamic_text_for(@article, :title) %>
 ```
 
 ### Why Does It Do It?
@@ -61,16 +56,6 @@ I believe the days of pure CRUD apps in consumer facing applications are numbere
 This gem is built as a way to merge the 'edit' page and the 'show' page for a given resource, so users can update content in real time just by clicking on the text that displays that information.
 
 For example, you could use this gem to merge the display text and edit field for the title of a blog post, so the H1 tag on the show page merges with the <input type='text'> tag in the edit form, removing the necessity for a separate edit page to update that information.
-
-
-### How Can You Use It?
-
-1. Dynamic Text
-2. Editable Text
-
-### Configuration
-
-1. AJAX
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
