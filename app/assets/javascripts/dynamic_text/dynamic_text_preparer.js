@@ -55,7 +55,7 @@ const prepareDynamicText = () => {
 
   // Update all other divs tagged with the same dynamic-tag as the current text being edited. (So if you have two elements on one page that display the same property of a resource, both will be updated in real time when you edit the text of one.)
   delegateToEditableText('input', (event) => {
-    const target = event.currentTarget;
+    const target = event.target;
     const newValue = target.innerText;
     const dynamicTag = target.getAttribute('data-dynamic-tag');
 
