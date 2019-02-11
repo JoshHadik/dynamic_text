@@ -25,7 +25,7 @@ $ gem install dynamic_text
 
 Dynamic Text allows you to do two main things:
 
-### 1) Render Editable Content Based on a Resource and Attribute
+### 1) Render editable content based on a resource and attribute
 
 With the dynamic_text gem, you can easily create a hybrid HTML element that acts as both the display text for a specific attribute of a resource, and the text box for updating that attribute.
 
@@ -33,7 +33,7 @@ With the dynamic_text gem, you can easily create a hybrid HTML element that acts
 <%= editable_text_for(@article, :title) %>
 ```
 
-### 2) Render Dynamic Content that Updates In Real Time with Editable Content
+### 2) Render dynamic content that updates in real time with editable text
 
 You might not want all of the text for a specific attribute of a specific resource to be editable. For example, you might want to display the title for a blog post in both an 'h1' tag above the body of the post, as well as the navigation bar on the top of the screen.
 
@@ -45,7 +45,7 @@ You can use the following method to identify content that isn't editable but upd
 <%= dynamic_text_for(@article, :title) %>
 ```
 
-### Why Does It Do It?
+## Why Does It Do It?
 
 Long ago, in the Wild West of software, the key ingredient for a successful app was functionality. Every idea was unique back then, and the potential of apps and websites was virtually untapped.
 
@@ -53,9 +53,7 @@ Nowadays, almost everything has been done. In order to gain an edge on competito
 
 I believe the days of pure CRUD apps in consumer facing applications are numbered, users no longer want to navigate through completely separate pages for specific actions on specific resources. Users want pages that provide information and actions for many different resources at once in an intuitive and easy-to-navigate manner (think 'dashboard' pages).
 
-This gem is built as a way to merge the 'edit' page and the 'show' page for a given resource, so users can update content in real time just by clicking on the text that displays that information.
-
-For example, you could use this gem to merge the display text and edit field for the title of a blog post, so the H1 tag on the show page merges with the <input type='text'> tag in the edit form, removing the necessity for a separate edit page to update that information.
+This gem is built as a way to merge the 'edit' page and the 'show' page for a given resource, so users can update content in real time just by clicking on the text that displays that information. For example, you could use this gem to merge the display text and edit field for the title of a blog post, so the H1 tag on the show page merges with the <input type='text'> tag in the edit form, removing the necessity for a separate edit page to update that information.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
