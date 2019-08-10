@@ -21,6 +21,11 @@ RSpec.describe DynamicText::LocalsSetter do
     Resource.new(attribute_value)
   end
 
+  # Reset the configuration after each test is run
+  after(:each) do
+    DynamicText.reset!
+  end
+
   describe '#get_dynamic_locals' do
     it 'returns a hash with :resource set to the first parameter' do
       output = subject.get_dynamic_locals(resource, :attribute)
@@ -56,6 +61,17 @@ RSpec.describe DynamicText::LocalsSetter do
     it 'returns a hash with :dynamic_tag defaulted to format resource_type:resource_id:attribute"' do
       output = subject.get_dynamic_locals(resource, :attribute)
       expect(output[:dynamic_tag]).to eq("resource:#{resource.id}:attribute")
+    end
+
+    it 'returns a hash with :style_class defaulted to an empty string' do
+      output = subject.get_dynamic_locals(resource, :attribute)
+      expect(output[:style_class]).to eq("")
+    end
+
+    it 'returns a hash with :style_class defaulted to dt-default-style when configuration was set to use_default_style' do
+      DynamicText.configuration.use_default_style!
+      output = subject.get_dynamic_locals(resource, :attribute)
+      expect(output[:style_class]).to eq("dt-default-style")
     end
   end
 
@@ -109,6 +125,17 @@ RSpec.describe DynamicText::LocalsSetter do
     it 'returns a hash with :js_key defaulted to format resource_type:attribute' do
       output = subject.get_editable_locals(resource, :attribute)
       expect(output[:js_key]).to eq("resource:attribute")
+    end
+
+    it 'returns a hash with :style_class defaulted to an empty string' do
+      output = subject.get_editable_locals(resource, :attribute)
+      expect(output[:style_class]).to eq("")
+    end
+
+    it 'returns a hash with :style_class defaulted to dt-default-style when configuration was set to use_default_style' do
+      DynamicText.configuration.use_default_style!
+      output = subject.get_editable_locals(resource, :attribute)
+      expect(output[:style_class]).to eq("dt-default-style")
     end
   end
 end

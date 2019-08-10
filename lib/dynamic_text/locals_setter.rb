@@ -10,6 +10,7 @@ class DynamicText::LocalsSetter
       locals[:resource_type] ||= default_resource_type
       locals[:resource_route] ||= default_resource_route
       locals[:dynamic_tag] ||= default_dynamic_tag
+      locals[:style_class] ||= default_style_class
     end
   end #PT
 
@@ -17,6 +18,7 @@ class DynamicText::LocalsSetter
     get_dynamic_locals(resource, attribute, opts).tap do |locals|
       locals[:url] ||= default_url
       locals[:js_key] ||= default_js_key
+      locals[:style_class] ||= default_style_class
     end
   end #PT
 
@@ -50,6 +52,10 @@ class DynamicText::LocalsSetter
 
   def default_js_key
     get_locals(:resource_type, :attribute).join(":")
+  end
+
+  def default_style_class
+    DynamicText.configuration.use_default_style? ? "dt-default-style" : ""
   end
 
   # Helpers

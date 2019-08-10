@@ -1,6 +1,6 @@
 <span class='editable-text-container'>
   <%= content_tag(:span,
-        class: 'editable-text',
+        class: "editable-text #{style_class}",
         contenteditable: true,
         placeholder: placeholder,
         data: { 'dynamic-tag': dynamic_tag }
