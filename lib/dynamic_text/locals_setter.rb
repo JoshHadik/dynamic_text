@@ -1,4 +1,5 @@
 class DynamicText::LocalsSetter
+  # Set all locals for dynamic text view partial based on passed in arguments
   def get_dynamic_locals(resource, attribute, opts={})
     locals.merge!(opts).tap do |locals|
       locals[:resource] = resource
@@ -14,6 +15,7 @@ class DynamicText::LocalsSetter
     end
   end #PT
 
+  # Set all locals for editable text view partial based on passed in arguments
   def get_editable_locals(resource, attribute, opts={})
     get_dynamic_locals(resource, attribute, opts).tap do |locals|
       locals[:url] ||= default_url
@@ -25,7 +27,7 @@ class DynamicText::LocalsSetter
   private
 
   # Defaults
-
+  
   def default_resource_scope
     DynamicText.configuration.resource_scope
   end

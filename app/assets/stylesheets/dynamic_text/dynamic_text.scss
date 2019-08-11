@@ -15,6 +15,13 @@
   cursor: text;
 }
 
+.editable-text[placeholder]:empty::before {
+  content: attr(placeholder);
+  color: #878787;
+  font-style: italic;
+}
+
+// Default style (only works when enabled by developer)
 .editable-text.dt-default-style:focus {
   background-color: #f2f2f2;
   border: 2px solid blue;
@@ -23,10 +30,4 @@
   line-height: 1.2;
   // padding: 8px;
   border-radius: 2px;
-}
-
-.editable-text[placeholder]:empty::before {
-  content: attr(placeholder);
-  color: #878787;
-  font-style: italic;
 }
