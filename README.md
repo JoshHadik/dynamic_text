@@ -1,7 +1,7 @@
 # Welcome to Dynamic Text
 Create a more seamless integration between displaying information and editing it! With Dynamic Text, you can allow users to easily update elements of a resource in your app just by clicking on the text and changing it, no separate edit page needed!
 
-![](name-of-giphy.gif)
+![](dynamic-text-in-action.gif)
 
 ## Build Status
 [![Build Status](https://travis-ci.org/JoshHadik/dynamic_text.svg?branch=master)](https://travis-ci.org/JoshHadik/dynamic_text)
