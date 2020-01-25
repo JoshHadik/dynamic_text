@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.test_files = Dir["spec/**/*"]
 
-  spec.add_dependency "rails", "~> 5"
+  spec.add_dependency "rails", "~> 6"
   spec.add_dependency "configuron", "~> 0.0.1"
 
   spec.add_development_dependency 'pg'
