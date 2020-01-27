@@ -27,7 +27,7 @@ class DynamicText::LocalsSetter
   private
 
   # Defaults
-  
+
   def default_resource_scope
     DynamicText.configuration.resource_scope
   end
@@ -37,7 +37,7 @@ class DynamicText::LocalsSetter
   end
 
   def default_resource_type
-    get_local(:resource).class.name.downcase
+    camel_to_underscore get_local(:resource).class.name
   end
 
   def default_resource_route
@@ -61,6 +61,14 @@ class DynamicText::LocalsSetter
   end
 
   # Helpers
+
+  def camel_to_underscore(string)
+    string.gsub(/::/, '/').
+    gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+    gsub(/([a-z\d])([A-Z])/,'\1_\2').
+    tr("-", "_").
+    downcase
+  end
 
   def locals
     @locals ||= {}
